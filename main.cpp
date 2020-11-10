@@ -40,7 +40,6 @@ cin>>password;
 srand(password);
 n=(n << 2) | (n >> (8 - 2));
 n=n^rand();
-cout<<n<<endl;
 char b =n;
 cout<<b;
 
