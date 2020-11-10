@@ -17,10 +17,10 @@ int main(int argc, const char* argv[]) {
     int password;
     cout<<"Write password"<<endl<<"Password-";
     cin>>password;
-    int32_t h=str;
+    int8_t h=str;
     srand(password);
     h=h^rand();
-    h=(h >> 2) | (h << (32 - 2));
+    h=(h >> 2) | (h << (8 - 2));
     ofstream file;
     //помещаем значение в файл
     file.open(file_name, ios::binary);
@@ -30,7 +30,7 @@ int main(int argc, const char* argv[]) {
 else if (mode == "decryption") {
 // Режим расшифрования
 //Достаем зашифрованные данные из файла
-int32_t n;
+int8_t n;
 ifstream file;
 file.open(file_name, ios::binary);
 file>>n;
@@ -38,7 +38,7 @@ int password;
 cout<<"Write password"<<endl<<"Password-";
 cin>>password;
 srand(password);
-n=(n << 2) | (n >> (32 - 2));
+n=(n << 2) | (n >> (8 - 2));
 n=n^rand();
 cout<<n<<endl;
 char b =n;
